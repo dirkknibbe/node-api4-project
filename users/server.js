@@ -6,6 +6,10 @@ const User = require("../users/users-model.js");
 
 server.use(express.json());
 
+server.get("/", (req, res) => {
+  res.json("Welcome to my API");
+});
+
 server.get("/api/users", (req, res) => {
   User.find()
     .then((users) => {
